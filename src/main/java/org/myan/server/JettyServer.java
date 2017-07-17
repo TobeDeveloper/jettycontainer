@@ -15,14 +15,14 @@ import java.util.logging.Logger;
  * Created by myan on 2017/7/17.
  * Intellij IDEA
  */
-public class JettyServer {
+class JettyServer {
     private static final String WEB_APP_ROOT = "src/main/webapp";
     private static final Logger LOG = Logger.getLogger("JettyServer");
 
     private int port;
     private String bindAddress;
     private Server server;
-    public JettyServer(int port) {
+    JettyServer(int port) {
         this(port, null);
     }
 
@@ -31,7 +31,7 @@ public class JettyServer {
         this.bindAddress = binding;
     }
 
-    public void start() {
+    void start() {
         this.server = new Server(createDefaultThreadPool());
         NetworkTrafficServerConnector connector = createConnector();
         server.addConnector(connector);
@@ -46,12 +46,12 @@ public class JettyServer {
         server.setStopAtShutdown(true);
         try {
             server.start();
+            LOG.info("Server started at port:"+port);
             server.join();
         } catch (Exception e) {
             LOG.log(Level.SEVERE, "Failed to start server:"+e.getMessage());
             throw new RuntimeException();
         }
-        LOG.info("Server started at port:"+port);
     }
 
     private NetworkTrafficServerConnector createConnector() {

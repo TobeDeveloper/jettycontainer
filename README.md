@@ -3,6 +3,7 @@
 Mainly used framework:
 * Spring MVC
 * JSP & jstl support
+* Mybatis
 
 Usage:
 * Execute `mvn clean complie` to build this project
