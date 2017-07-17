@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="jettycontainer:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="jettycontainer-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="jettycontainer:war exploded" />
+    </root>
+  </artifact>
+</component>
