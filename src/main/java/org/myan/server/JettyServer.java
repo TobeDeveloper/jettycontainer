@@ -7,6 +7,7 @@ import org.eclipse.jetty.server.handler.HandlerCollection;
 import org.eclipse.jetty.util.thread.QueuedThreadPool;
 import org.eclipse.jetty.util.thread.ThreadPool;
 import org.eclipse.jetty.webapp.WebAppContext;
+import org.myan.cache.core.DefaultCacheLoader;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -47,6 +48,7 @@ class JettyServer {
         try {
             server.start();
             LOG.info("Server started at port:"+port);
+            //DefaultCacheLoader loader = new DefaultCacheLoader();
             server.join();
         } catch (Exception e) {
             LOG.log(Level.SEVERE, "Failed to start server:"+e.getMessage());

@@ -1,5 +1,6 @@
 package org.myan.web.controller;
 
+import org.myan.cache.core.DefaultCacheLoader;
 import org.myan.web.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,7 @@ public class BasicController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String home() {
+//        DefaultCacheLoader loader = new DefaultCacheLoader();
         System.out.println(service.getBases().size());
         return "index";
     }
